@@ -550,6 +550,8 @@ latest industry advancements.</p>
             <div class="col-md-3 text-center">
                 <img src="image-5.jpeg" alt="SriVensy Technologies Logo" class="img-fluid" style="width: 150px;">
             </div>
+            <p> </p>
+            <p> </p>
             <!-- Right Column: Internship Details -->
             <div class="col-md-9">
                 <h3><span class="violet-text">Internship on Python - SriVensy Technologies | 2024</span></h3>
@@ -569,19 +571,19 @@ latest industry advancements.</p>
     <!-- Main Certifications - 3 per row -->
     <div class="row">
       <div class="col-md-4 mb-4">
-        <div class="card">
+        <div class="card border-0">
           <img src="certificates/c1.jpeg" class="card-img-top img-fluid" alt="Certification 1">
         </div>
       </div>
 
       <div class="col-md-4 mb-4">
-        <div class="card">
+        <div class="card border-0">
           <img src="certificates/c2.jpeg" class="card-img-top img-fluid" alt="Certification 2">
         </div>
       </div>
 
       <div class="col-md-4 mb-4">
-        <div class="card">
+        <div class="card border-0">
           <img src="certificates/c7.jpeg" class="card-img-top img-fluid" alt="Certification 3">
         </div>
       </div>
@@ -589,19 +591,19 @@ latest industry advancements.</p>
 
     <div class="row">
       <div class="col-md-4 mb-4">
-        <div class="card">
+        <div class="card border-0">
           <img src="certificates/c6.jpeg" class="card-img-top img-fluid" alt="Certification 4">
         </div>
       </div>
 
       <div class="col-md-4 mb-4">
-        <div class="card">
+        <div class="card border-0">
           <img src="certificates/c8.jpeg" class="card-img-top img-fluid" alt="Certification 5">
         </div>
       </div>
 
       <div class="col-md-4 mb-4">
-        <div class="card">
+        <div class="card border-0">
           <img src="certificates/c3.jpeg" class="card-img-top img-fluid" alt="Certification 6">
         </div>
       </div>
@@ -609,27 +611,27 @@ latest industry advancements.</p>
 
     <div class="row">
       <div class="col-md-4 mb-4">
-        <div class="card">
+        <div class="card border-0">
           <img src="certificates/c4.jpeg" class="card-img-top img-fluid" alt="Certification 7">
         </div>
       </div>
 
       <div class="col-md-4 mb-4">
-        <div class="card">
+        <div class="card border-0">
           <img src="certificates/c5.jpeg" class="card-img-top img-fluid" alt="Certification 8">
         </div>
       </div>
     </div>
 
-    <!-- Read More / View Participation Certificates -->
+    <!-- View Participation Certificates (Read More as a Link) -->
     <div class="text-center mb-4">
-      <a href="#participationCertificates" class="btn-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="participationCertificates">
+      <a href="javascript:void(0);" onclick="toggleText()" id="toggleLink" class="btn-link">
         View Participation Certificates
       </a>
     </div>
 
     <!-- Participation Certificates (Initially Hidden) -->
-    <div class="collapse" id="participationCertificates">
+    <div id="moreText" style="display:none;">
       <div class="row">
         <div class="col-md-3 mb-3">
           <img src="certificates/pc7.jpeg" class="img-fluid certification-img" alt="Participation Certificate 1">
@@ -712,13 +714,22 @@ latest industry advancements.</p>
   </div>
 </section>
 
-<!-- Bootstrap JS >
-<script>
-  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl);
-  });
+
+    <script>
+  function toggleText() {
+    var moreText = document.getElementById("moreText");
+    var toggleLink = document.getElementById("toggleLink");
+
+    if (moreText.style.display === "none") {
+      moreText.style.display = "block"; // Show the hidden text
+      toggleLink.innerHTML = "Hide Participation Certificates"; // Change the link text
+    } else {
+      moreText.style.display = "none"; // Hide the text
+      toggleLink.innerHTML = "View Participation Certificates"; // Reset the link text
+    }
+  }
 </script>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
