@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        body {
+
+            font-family: Arial, sans-serif;
+
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+         .btn-pink {
+            background-color: #007BFF;
+            border: none;
+        }
+
+        .btn-pink:hover {
+            background-color: #007BFF;
+        }
+
+        /* Animation */
+        .animated {
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+        }
+
+        .fadeInLeft {
+            animation: fadeInLeft 0.6s forwards;
+        }
+
+        @keyframes fadeInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+   
+        #home {
+            height: 100vh; /* Full viewport height */
+            background: url('manu.jpg');
+             background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; 
+position: relative;
+    overflow: hidden; 
+    display: flex; 
+            align-items: center; /* Center vertically */
+            justify-content: flex-start; /* Align left */
+        }
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+  z-index: 1; /* Places the overlay below the text */
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+ 
+}
+h1, p {
+  color: #ffffff; /* Light text color for high contrast */
+  z-index: 2; /* Ensure the text appears above the overlay */
+}
+#home .container {
+  z-index: 2; /* Ensures the container is above the overlay */
+}
+
+
+
+        #education {
+            background-color: #2c2c2c;
+            padding: 60px 0;
+color: white;
+        }
+        .education-content {
+            position: relative; /* For positioning the image */
+            text-align: center;
+        }
+        .education-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+
+               
+        }
+        .education-item {
+            margin-bottom: 30px;
+        }
+        .education-item h4 {
+            font-size: 1.2rem;
+            color: orange;
+            text-transform: capitalize;
+
+        }
+        .education-item span {
+            display: block;
+            font-size: 0.9rem;
+           color:white;
+            margin-bottom: 10px;
+        }
+        /* Small picture at the top-right corner */
+        .edu-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: auto;
+            border-radius: 50%;
+        }
+#skills {
+   background-color: white; /* Black background */
+    padding: 50px 0;
+}
+
+#skills h2{
+color: black
+font-size: 4rem; /* Increase font size for the "Skills" heading */
+    
+} 
+#skills h3 {
+    color: blue;
+font-size:2rem;
+}
+
+#skills h5 {
+    font-size: 1.5rem;
+    color: black;
+    margin-bottom: 10px;
+}
+
+#skills ul {
+    padding-left: 20px;
+color: black;
+}
+
+#skills li {
+    font-size: 1.2rem;
+    color: black;
+}
+
+#skills img {
+    width: 150px; /* Increase image size */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; }
+.violet-text {
+    color: #7A1FA2; /* Set the entire heading to violet */
+}
+
+#projects h2 {
+    color: white; /* White section heading */
+    font-size: 2.5rem; /* Larger font for project heading */
+    margin-bottom: 40px; /* Spacing below the heading */
+}
+
+.card {
+    background-color: #333; /* Dark background for the cards */
+    border: none; /* Remove border */
+    color: white; /* White text */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Card lifts up on hover */
+}
+
+.card-title {
+    color: #ff6347; /* Orange for project titles */
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 20px;
+ color: #f0f0f0;
+}
+
+#projects {
+    background-color: #2c2c2c; /* Set background for the section */
+    padding: 50px 0;
+ color: #f0f0f0;
+}
+#contact{
+    background-color: #2c2c2c; /* Set background for the section */
+    padding: 50px 0;
+ color: #f0f0f0;
+}
+
+
+.section-header {
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+color: #333333; 
+    font-weight: bold;
+    padding-bottom: 10px; /* Space between text and underline */
+    margin-bottom: 20px;
+}
+.section-header1 { position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding-bottom: 10px; /* Space between text and underline */
+    margin-bottom: 20px;
+    
+    color: white; /* Text color */
+    
+}
+.lead{
+color:black;
+margin-bottom: 20px;
+}
+
+.section-header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 4px; /* Thickness of the underline */
+    background-color: #FFA500; 
+    border-radius: 5px; /* Make the underline slightly curved */
+    transition: width 0.6s ease-in-out; /* Smooth animation for the underline */
+}
+
+.section-header:hover::after {
+    width: 100%; /* The underline grows from 0 to 100% when hovered */
+}
+
+@keyframes curlyUnderline {
+    0% {
+        width: 0;
+ left: 50%;
+    }
+    50% {
+        width: 50%;
+left : 0;
+        transform: skewX(20deg); /* Creates the curly-like effect */
+    }
+    100% {
+        width: 100%;
+left : 0;
+    }
+}
+
+.section-header::after {
+    animation: curlyUnderline 1s ease-in-out;
+}
+.section-header1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 4px; /* Thickness of the underline */
+    background-color: #FFA500; /* Color of the underline */
+    border-radius: 5px; /* Make the underline slightly curved */
+    transition: width 0.6s ease-in-out; /* Smooth animation for the underline */
+}
+
+.section-header1:hover::after {
+    width: 100%; /* The underline grows from 0 to 100% when hovered */
+}
+
+@keyframes curlyUnderline {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 50%;
+        transform: skewX(20deg); /* Creates the curly-like effect */
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.section-header1::after {
+    animation: curlyUnderline 1s ease-in-out;
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+ .certification-img {
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+/* Custom CSS for Curled Underline Animation */
+.underline-effect {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-effect:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -5px; /* Adjust this value for spacing */
+  width: 0;
+  height: 5px; /* Thickness of the underline */
+  background: #FFD700; /* Color of the underline */
+  border-radius: 10px; /* Makes the underline more rounded */
+  transition: width 0.4s ease, left 0.4s ease;
+}
+
+.underline-effect:hover:after {
+  width: 100%;
+  left: 0;
+}
+.certifications {
+    display: flex;
+    flex-wrap: wrap; /* Allows images to wrap to the next line */
+    justify-content: center; /* Centers the images */
+    margin: 20px 0; /* Adds margin above and below the section */
+}
+
+.certifications img {
+    width: 200px; /* Adjust the width as needed */
+    height: auto; /* Maintains aspect ratio */
+    margin: 10px; /* Adds spacing between images */
+    object-fit: contain; /* Ensures images are covered without distortion */
+    border-radius: 10px; /* Optional: adds rounded corners to images */
+}
+
+
+     </style>
+
+
+</head>
+<body>
+ <!-- Sticky Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#home">My Portfolio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#skills">Skills</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link" href="#projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#certifications">Certifications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Home Section -->
+<section id="home" class="vh-100" style="background: url('manu.jpg') no-repeat center center/cover;">
+<div class="overlay"></div> <!-- Background dimming overlay -->
+  <div class="container d-flex justify-content-center align-items-center h-100">
+    <div class="row align-items-center w-100 text-center">
+      <div class="col-md-6 text-white">
+        <h3 class="display-4 animated fadeInLeft">
+          <span class="underline-effect" style="color:white;">Welcome to My Portfolio</span>
+        </h3>
+ <h1 class="display-4 animated fadeInLeft">
+          <span class="underline-effect" style="color: #FFD700;"><b><i>I'm Manasa</i></b></span>
+        </h1>
+        <p class="lead animated fadeInLeft" style="color:white;">Enthusiastic Learner.</p>
+
+        <p class="lead animated fadeInLeft" style="color:white;">Discover my skills, projects, and achievements.</p>
+        <a href="#about" class="btn btn-lg btn-pink animated fadeInLeft">Learn More</a>
+      </div>
+          </div>
+  </div>
+</section>
+<section id="about" class="py-5 bg-light">
+<div class="container">
+        <h2 class="section-header text-center mb-5">About Me</h2>
+        <!-- Your about me content here -->
+    </div>
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Placeholder for personal image -->
+                <img src="image-1.jpeg" alt="Your Photo" class="img-fluid rounded-circle" style="width: 200px; height: 200px";>
+            </div>
+            <div class="col-md-8">
+               
+                <p class="lead">I'm Manasa, pursuing Final year.I'm passionate about exploring 
+new technologies and using creative thinking to solve
+problems. I enjoy learning and sharing knowledge with others. 
+As the class representative and leader of my community 
+service project, I am dedicated to making a positive impact 
+through teamwork and innovation. I look forward to applying 
+my skills to real-world challenges and staying updated with the 
+latest industry advancements.</p>
+                
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Skills Section -->
+<section id="skills" class="py-5">
+    <div class="container">
+        <h2 class=" section-header text-center mb-5">Skills</h2>
+        <div class="row">
+            <!-- Left Column: Technical Skills -->
+            <div class="col-md-6">
+                <h3 class="text-center">Technical Skills</h3>
+                <div class="text-center mb-3">
+                    <img src="image-3.jpeg" alt="Technical Skills" class="img-fluid" style="width: 100px;">
+                </div>
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <h5>Programming Languages</h5>
+                        <ul>
+                            <li>C</li>
+                            <li>Python</li>
+                        </ul>
+                    </li>
+                    <li class="mb-3">
+                        <h5>Web Technologies</h5>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right Column: Soft Skills -->
+            <div class="col-md-6">
+                <h3 class="text-center">Soft Skills</h3>
+                <div class="text-center mb-3">
+                    <img src="image-4(1).jpeg" alt="Soft Skills" class="img-fluid" style="width: 100px;">
+                </div>
+                <ul>
+                    <li class="mb-3">Leadership</li>
+                    <li class="mb-3">Decision Making</li>
+                    <li class="mb-3">Communication</li>
+                    <li class="mb-3">Multi-tasking</li>
+                    <li class="mb-3">Content Creation (Blogging)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="education">
+    <div class="container">
+        <div class="education-content">
+            <h2 class="section-header1 text-center mb-5">Education</h2>
+ <img src="image-2.png" alt="Education Image" class="edu-image">
+                
+            <!-- Education Item 1 -->
+            <div class="education-item text-start">
+                <h4>JAWAHARLAL NEHRU TECHNOLOGICAL UNIVERSITY, ANANTAPUR</h4>
+                <span>Bachelor of Technology in CSE | CGPA: 8.5</span>
+                <span>June 2021 - April 2025</span>
+            </div>
+            <!-- Education Item 2 -->
+            <div class="education-item text-start">
+                <h4>PADMAVATHI JUNIOR COLLEGE</h4>
+                <span>Intermediate in MPC</span>
+                <span>June 2019 - May 2021</span>
+            </div>
+            <!-- Education Item 3 -->
+            <div class="education-item text-start">
+                <h4>AP MODEL SCHOOL</h4>
+                <span>Secondary School Certificate (SSC) and SSC Vocational Course</span>
+                <span>June 2018 - May 2019</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Projects Section -->
+<section id="projects" class="py-5">
+    <div class="container">
+        <h2 class=" section-header1 text-center mb-5">Projects</h2>
+        <div class="row">
+            <!-- Project 1: Personalized Sentence Generator -->
+            <div class="col-md-4">
+                <div class="card shadow-lg mb-4" style="background-color: #333; color: #fff;">
+                    <div class="card-body">
+                        <h3 class="card-title text-center" style="color: #FFA500;">Personalized Sentence Generator</h3>
+                        <p class="card-text">
+                            Developed a Python program for creating personalized sentences based on user input, 
+                            demonstrating proficiency in string manipulation and user interaction.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Community Service Project -->
+            <div class="col-md-4">
+                <div class="card shadow-lg mb-4" style="background-color: #333; color: #fff;">
+                    <div class="card-body">
+                        <h3 class="card-title text-center" style="color: #FFA500;">Community Service Project</h3>
+                        <p class="card-text">
+                            Surveyed local villages to gather data and support community needs, focusing on identifying 
+                            key resources and promoting sustainable development solutions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Portfolio Website -->
+            <div class="col-md-4">
+                <div class="card shadow-lg mb-4" style="background-color: #333; color: #fff;">
+                    <div class="card-body">
+                        <h3 class="card-title text-center" style="color: #FFA500;">Portfolio Website</h3>
+                        <p class="card-text">
+                            Created a personal portfolio website using HTML, CSS, and Bootstrap to showcase various projects 
+                            and skills in web development, ensuring responsiveness and modern design.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Internship Section -->
+<section id="internship" class="py-5">
+    <div class="container">
+        <h2 class=" section-header text-center mb-5">Internship</h2>
+        <div class="row">
+            <!-- Left Column: Company Logo -->
+            <div class="col-md-3 text-center">
+                <img src="image-5.jpeg" alt="SriVensy Technologies Logo" class="img-fluid" style="width: 150px;">
+            </div>
+            <!-- Right Column: Internship Details -->
+            <div class="col-md-9">
+                <h3><span class="violet-text">Internship on Python - SriVensy Technologies | 2024</span></h3>
+                <p>Python Programming Experience:</p>
+                <ul>
+                    <li>Completed a Python course at SriVensy Technologies, where I gained foundational skills in programming concepts and problem-solving techniques.</li>
+                    <li>Developed a simple Python program that generates personalized sentences based on user input, demonstrating proficiency in string manipulation and user interaction.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="certifications" class="py-5">
+  <div class="container">
+    <h2 class="section-header text-center mb-5">Certifications</h2>
+
+    <!-- Main Certifications - 3 per row -->
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="certificates/c1.jpeg" class="card-img-top img-fluid" alt="Certification 1">
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="certificates/c2.jpeg" class="card-img-top img-fluid" alt="Certification 2">
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="certificates/c7.jpeg" class="card-img-top img-fluid" alt="Certification 3">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="certificates/c6.jpeg" class="card-img-top img-fluid" alt="Certification 4">
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="certificates/c8.jpeg" class="card-img-top img-fluid" alt="Certification 5">
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="certificates/c3.jpeg" class="card-img-top img-fluid" alt="Certification 6">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="certificates/c4.jpeg" class="card-img-top img-fluid" alt="Certification 7">
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="certificates/c5.jpeg" class="card-img-top img-fluid" alt="Certification 8">
+        </div>
+      </div>
+    </div>
+
+    <!-- Read More / View Participation Certificates -->
+    <div class="text-center mb-4">
+      <a href="#participationCertificates" class="btn-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="participationCertificates">
+        View Participation Certificates
+      </a>
+    </div>
+
+    <!-- Participation Certificates (Initially Hidden) -->
+    <div class="collapse" id="participationCertificates">
+      <div class="row">
+        <div class="col-md-3 mb-3">
+          <img src="certificates/pc7.jpeg" class="img-fluid certification-img" alt="Participation Certificate 1">
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <img src="certificates/pc6.jpeg" class="img-fluid certification-img" alt="Participation Certificate 2">
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <img src="certificates/pc5.jpeg" class="img-fluid certification-img" alt="Participation Certificate 3">
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <img src="certificates/pc4.jpeg" class="img-fluid certification-img" alt="Participation Certificate 4">
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <img src="certificates/pc8.jpeg" class="img-fluid certification-img" alt="Participation Certificate 5">
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <img src="certificates/pc3.jpeg" class="img-fluid certification-img" alt="Participation Certificate 6">
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <img src="certificates/pc1.jpeg" class="img-fluid certification-img" alt="Participation Certificate 7">
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <img src="certificates/pc2.jpeg" class="img-fluid certification-img" alt="Participation Certificate 8">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact Me Section -->
+<section id="contact" class="py-5" style="background-color: #2c2c2c; color: white; >
+  <div class="container text-center">
+    <h2 class="section-header1 text-center mb-5">Contact Me</h2>
+    
+    <!-- Contact Information (Email & Phone) -->
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-4">
+        <div class="d-flex align-items-center justify-content-center">
+          <i class="bi bi-envelope" style="font-size: 1.5rem; margin-right: 10px;"></i>
+          <p class="mb-0">neelimanasa1391@gmail.com</p>
+        </div>
+      </div>
+          </div>
+
+    <!-- Social Media Icons -->
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="d-flex justify-content-center">
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/neelimanasa" target="_blank" class="btn btn-circle btn-pink mx-2" data-bs-toggle="tooltip" data-bs-placement="top" title="LinkedIn">
+            <img src="linkedIn.png" class="img-fluid" alt="LinkedIn" style="width: 30px;">
+          </a>
+          
+          <!-- GitHub -->
+          <a href="https://github.com/Neelimanasa/" target="_blank" class="btn btn-circle btn-pink mx-2" data-bs-toggle="tooltip" data-bs-placement="top" title="GitHub">
+            <img src="git1.png" class="img-fluid" alt="GitHub" style="width: 30px;">
+          </a>
+          
+          <!-- YouTube -->
+          <a href="https://www.youtube.com/@awakecreativity2795" target="_blank" class="btn btn-circle btn-pink mx-2" data-bs-toggle="tooltip" data-bs-placement="top" title="YouTube">
+            <img src="youtube1.png" class="img-fluid" alt="YouTube" style="width: 30px;">
+          </a>
+ <!-- my website -->
+          <a href="https://4cuswithmanasa.lovestoblog.com/?i=3" target="_blank" class="btn btn-circle btn-pink mx-2" data-bs-toggle="tooltip" data-bs-placement="top" title="website">
+            <img src="website1.png" class="img-fluid" alt="website" style="width: 30px;">
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bootstrap JS >
+<script>
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
